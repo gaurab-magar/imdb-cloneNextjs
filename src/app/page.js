@@ -28,7 +28,6 @@ export default async function Home({ searchParams }) {
       <main>
         <div>
           <h2>Oops! Something went wrong while fetching data.</h2>
-          <p>{error.message}</p>
         </div>
       </main>
     );
