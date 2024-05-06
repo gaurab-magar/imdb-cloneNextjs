@@ -1,15 +1,18 @@
 import Image from 'next/image'
 import React from 'react';
 import Link from 'next/link';
+import { FaRegThumbsUp } from "react-icons/fa6";
+
 const Card = ({results}) => {
   return (
     
 
     <Link href={`/movie/${results.id}`}>
-<div className="m-5 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-            <Image className="p-2 rounded-2xl hover:scale-125 duration-200" src={`https://image.tmdb.org/t/p/original/${results.backdrop_path || results.poster_path}`} alt="product image" height={200} width={500}/>
+<div className="m-5 overflow-hidden bg-white border rounded-lg dark:bg-gray-800 dark:border-gray-700 sm:hover:shadow-slate-400 sm:shadow-md transition-shadow duration-200">
+            <Image className="p-2 rounded-2xl hover:scale-110 duration-200" src={`https://image.tmdb.org/t/p/original/${results.backdrop_path || results.poster_path}`} alt="product image" height={200} width={500}/>
         <div className="px-5 pb-5">
-                <p className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">{results.title}</p>
+                <p className="text-xl font-semibold tracking-tight my-2 text-gray-900 dark:text-white truncate">{results.title}</p>
+                <p className="text-xs font-semibold tracking-tight text-gray-900 dark:text-white line-clamp-3">{results.overview}</p>
             <div className="flex items-center mt-2.5 mb-5">
                 <div className="flex items-center space-x-1 rtl:space-x-reverse">
                     <svg className="w-4 h-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
@@ -33,6 +36,10 @@ const Card = ({results}) => {
             <div className="flex flex-col justify-start">
                 <span className="text-sm font-bold text-gray-900 dark:text-white"> Release Date: <span className='text-xs ml-2 text-blue-600 font-light'> {results.release_date}</span> </span>
                 <span className="text-sm font-bold text-gray-900 dark:text-white"> Media type: <span className='text-xs ml-2 text-blue-600 font-light'> {results.media_type}</span> </span>
+            </div>
+            <div className='flex items-center justify-center float-right m-2'>
+                <FaRegThumbsUp className='mr-2 cursor-pointer' />
+                <p>{results.vote_count}</p>
             </div>
         </div>
 </div>
