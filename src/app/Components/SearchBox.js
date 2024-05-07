@@ -11,10 +11,11 @@ const SearchBox = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         router.push(`/search/${search}`);
+        setSearch('');
     }
   return (
     <>
-        <form onSubmit={handleSubmit} className="flex items-center max-w-sm mx-auto my-4">   
+        <form onSubmit={handleSubmit} className="flex items-center max-w-sm mx-auto m-4 px-4">   
             <label for="simple-search" className="sr-only">Search</label>
             <div className="w-full">
                 <input value={search} onChange={(e) => setSearch(e.target.value)} type="text" id="simple-search" className="outline-none bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search branch name..." required />
