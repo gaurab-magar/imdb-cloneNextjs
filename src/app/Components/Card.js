@@ -11,7 +11,7 @@ const Card = ({results}) => {
 <div className="overflow-hidden bg-white border rounded-lg dark:bg-gray-800 dark:border-gray-700 sm:hover:shadow-slate-400 sm:shadow-md transition-shadow duration-200">
             <Image className="p-2 rounded-2xl hover:scale-110 duration-200" src={`https://image.tmdb.org/t/p/original/${results.backdrop_path || results.poster_path}`} alt="product image" height={200} width={500}/>
         <div className="px-5 pb-5">
-                <p className="text-xl font-semibold tracking-tight my-2 text-gray-900 dark:text-white truncate">{results.title}</p>
+                <p className="text-xl font-semibold tracking-tight my-2 text-gray-900 dark:text-white truncate">{results.title || 'Missing title'}</p>
                 <p className="text-xs font-semibold tracking-tight text-gray-900 dark:text-white line-clamp-3">{results.overview}</p>
             <div className="flex items-center mt-2.5 mb-5">
                 <div className="flex items-center space-x-1 rtl:space-x-reverse">
