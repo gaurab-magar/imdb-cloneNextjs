@@ -1,3 +1,4 @@
+import SearchBox from '@/app/Components/SearchBox';
 import Image from 'next/image';
 import React from 'react';
 import { FaRegThumbsUp } from "react-icons/fa6";
@@ -9,6 +10,7 @@ export default async function page ({params}) {
     const movie = await res.json();
   return (
     <section className="text-gray-600 body-font overflow-hidden">
+      <SearchBox />
   <div className="container px-5 py-24 mx-auto">
     <div className="lg:w-5/5 mx-auto flex flex-wrap">
       <Image className="md:w-1/2 sm:w-full p-2 rounded-2xl hover:scale-110 duration-200" src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path || movie.poster_path}`} alt="product image" height={150} width={200}/>
