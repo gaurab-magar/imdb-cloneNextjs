@@ -2,7 +2,7 @@
 import React from 'react';
 import { useEffect } from 'react';
 
-const error = ({error,reset}) => {
+const ErrorComponent = ({error,reset}) => {
     useEffect(()=>{
         document.title=`Error: ${error.message}`;
         return ()=>document.title='React App';
@@ -16,4 +16,4 @@ const error = ({error,reset}) => {
   ) 
 }
 
-export default error
+export default ErrorComponent;
