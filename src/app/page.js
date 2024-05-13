@@ -2,6 +2,9 @@ import Results from "./Components/Results";
 import Hero from "./Components/Hero";
 
 const API_KEY = process.env.API_KEY;
+// 'eslint error removed by api_key.replace(/'/g, "&apos;")'
+// const API_KEY = `${process.env.API_KEY}`.replace(/'/g, "&apos;");
+
 
 export default async function Home({ searchParams }) {
 
