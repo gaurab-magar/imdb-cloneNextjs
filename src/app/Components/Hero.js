@@ -6,8 +6,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Autoplay } from 'swiper/modules';
-import HeroContent from './heroContent';
-
+import HeroContent from './HeroContent';
 
 const Hero = () => {
 
