@@ -1,5 +1,6 @@
 import Results from "./Components/Results";
 import Hero from "./Components/Hero";
+import { Suspense } from "react";
 
 const API_KEY = process.env.API_KEY;
 
@@ -21,7 +22,10 @@ export default async function Home({ searchParams }) {
       <main>
         <Hero />
         <div>
-          <Results results={data.results} />
+          <Suspense fallback={<div>Loading...</div>}>
+            <Results results={data.results} genre={genre} />
+          </Suspense>
+          {/* <Results results={data.results} /> */}
         </div>
       </main>
     );
