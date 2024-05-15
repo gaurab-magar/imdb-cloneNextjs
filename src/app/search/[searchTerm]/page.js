@@ -6,13 +6,13 @@ export default async function searchTerm({params}){
    const data = await res.json();
    const result = data.results;
   return (
-    <div>
-        {
-            result && result.length === (
+        <div>
+            {result && result.length === 0 && (
                 <h1 className='text-center pt-6'>No results found</h1>
-            )
-        }
-        {result && <Results results={result} />}
-    </div>
+            )}
+            {result && result.length > 0 && (
+                <Results results={result} />
+            )}
+        </div>
   )
 }
